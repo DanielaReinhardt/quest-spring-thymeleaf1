@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Doctor Sign In</title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
+<header th:fragment = "top">
     <nav>
         <span>Doctor Secret Service</span>
-        <a href="/">Sign In</a>
+         <a th:href="@{/doctor}">Sign In</a>
+        <!--oder nur /doctor oder nur /???
+        <a th:href="@{/doctor(name=${name}, number=${number})}">Sign In</a>-->
     </nav>
 </header>
 <form method="get" action="doctor">
@@ -23,7 +25,7 @@
         <input type="submit" value="Sign In">
     </fieldset>
 </form>
-<footer>
+<footer th:fragment ="down">
     <ul>
         <li><a href="#">Twitter</a></li>
         <li><a href="#">Facebook</a></li>
